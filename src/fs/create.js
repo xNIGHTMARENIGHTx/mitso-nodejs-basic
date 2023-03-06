@@ -1,7 +1,9 @@
 import fs from "fs/promises"
+import url from "url"
 
 const create = async () => {
-    await fs.writeFile("src/fs/files/fresh.txt", "I am fresh and young")
+    let dirname = url.fileURLToPath(new URL(".", import.meta.url))
+    await fs.writeFile(`${dirname}files/fresh.txt`, "I am fresh and young")
         .catch((err) => {throw new Error("FS operation failed")})
 };
 
