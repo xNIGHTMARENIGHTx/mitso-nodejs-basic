@@ -19,9 +19,6 @@ const compress = async () => {
             console.log(err);
         }
     });
-    
-
-    
 };
 
 await compress();
